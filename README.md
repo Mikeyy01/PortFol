@@ -61,6 +61,55 @@ npm run dev
 - [X] ~~Website Thumbnail (When sharing website)~~
 - [ ] Website Hosting
 
+## User Stories  & Success Criteria
+### Story  1
+> As a user, I want to view Michael's resume, so that I can understand his professional background and skills.
+
+
+
+##### Success Criteria:
+- [X] A "View Resume" button is prominently displayed on the homepage.
+- [ ] Clicking the button opens/downloads the resume in a PDF format.
+
+---
+
+### Story  2 
+>As a user, I want to learn about Michael's projects, so that I can see his work and capabilities.
+
+
+##### Success Criteria:
+- [ ] A "Projects" section lists various projects with brief descriptions.
+- [ ] Each project has a link to more detailed information or a live demo.
+- [X] Projects are visually represented with images or screenshots.
+
+---
+### Story  3
+> As a user, I want to contact Michael, so that I can inquire about his services and/or collaborate with him.
+
+
+##### Success Criteria:
+- [ ] A "Contact" section or form is available and easily accessible.
+
+---
+### Story  4
+> As a user, I want to see a well-structured and visually appealing homepage, so that I am impressed with Michael's design skills.
+
+##### Success Criteria:
+
+
+- [x] Navbar is intuitive with clearly labeled sections.
+
+- [ ] The website should be responsive; the layout adjusts to different screen sizes without losing functionality or readability.
+
+---
+### Story  5
+> As a user, I want to view Michael's profile pages on different platforms, so I can connect with him there.
+
+
+- [ ] GitHub and LinkedIn links are displayed in the header and footer.
+
+- [ ] Clicking an icon opens the corresponding profile in a new tab.
+
 
 ## Project File structure
 
