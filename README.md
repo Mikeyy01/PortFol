@@ -4,7 +4,8 @@ TBA
 
 ## Live Website
 
-TBA
+My portfolio is currently hosted on Vercel.
+Check it out here: [https://portfolio-s6.vercel.app/](https://portfolio-s6.vercel.app/)
 
 
 # Portfolio Set-up Guide
