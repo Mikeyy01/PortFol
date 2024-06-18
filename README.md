@@ -70,7 +70,7 @@ npm run dev
 
 ##### Success Criteria:
 - [X] A "View Resume" button is prominently displayed on the homepage.
-- [ ] Clicking the button opens/downloads the resume in a PDF format.
+- [X] Clicking the button opens/downloads the resume in a PDF format.
 
 ---
 
@@ -109,7 +109,7 @@ npm run dev
 
 - [ ] GitHub and LinkedIn links are displayed in the header and footer.
 
-- [ ] Clicking an icon opens the corresponding profile in a new tab.
+- [X] Clicking an icon opens the corresponding profile in a new tab.
 
 
 ## Project File structure
