@@ -19,7 +19,7 @@ gsap.registerPlugin(ScrollTrigger);
 const lenis = new Lenis();
 
 lenis.on('scroll', (e) => {
-  //onsole.log(e)
+  // console.log(e)
 });
 
 function raf(time) {

@@ -1,5 +1,3 @@
-/* Add these styles to homepage.css */
-
 body {
     margin: 0;
     padding: 0;
@@ -100,6 +98,7 @@ h1 {
 
 /* Section 2 styles */
 .section2 {
+    position: relative;
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -133,6 +132,7 @@ h1 {
 }
 
 .project-info {
+    position: relative;
     width: 40%;
     display: flex;
     flex-direction: column;
@@ -144,10 +144,10 @@ h1 {
 }
 
 .project-icons {
+    position: absolute;
+    top: -200px;
+    right: 0;
     display: flex;
-    justify-content: flex-end;
-    width: 100%;
-    margin-bottom: 20em;
 }
 
 .icon-circle {
@@ -167,21 +167,21 @@ h1 {
 .project-details h2 {
     color: #FFFFFF;
     font-weight: bold;
-    font-size: 4em;
-    margin: -1em 1em 1em 0em;
+    font-size: 2em;
+    margin: 0.5em 0;
 }
 
-.project-details{
+.project-details {
     color: #9D9D9E;
     font-weight: bold;
-    margin: 0.5em 10em 10em 0em;
     font-size: 1.2em;
+    margin: 0.5em 0;
 }
 
 .project-tags {
     font-size: 1em;
     color: #FFFFFF;
-    margin: 5em 0em 0em 0em;
+    margin-top: 0.5em;
     font-weight: bold;
 }
 
