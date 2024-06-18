@@ -3,6 +3,8 @@ import gsap from 'gsap';
 import './Preloader.css';
 import "@fontsource/inter";
 
+
+
 const Preloader = ({ onEnd }) => {
     // Array of the different hellos that will be displayed
     const [hellos, setMessages] = useState(["Hello!", "أهلا", "Γειά σου!", "Здравейте!", "Hallo!", "Hallo!!"]);

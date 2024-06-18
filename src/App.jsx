@@ -98,11 +98,11 @@ const App = () => {
             <div ref={contentRef}>
               <section className="section1" ref={sectionRef}>
                 <div className="top-left">
-                  <button className="resume-button" data-blobity>VIEW RESUME</button>
+                  <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" className="resume-button" data-blobity>VIEW RESUME</a>
                 </div>
                 <div className="top-right">
-                  <a href="https://github.com" className="social-link" data-blobity>GITHUB</a>
-                  <a href="https://linkedin.com" className="social-link" data-blobity>LINKEDIN</a>
+                  <a href="https://github.com/Mikeyy01" className="social-link" data-blobity>GitHub</a>
+                  <a href="https://linkedin.com/in/michael-asl" className="social-link" data-blobity>LinkedIn</a>
                 </div>
                 <div className="content">
                   <h1 ref={headingRef}>MICHAEL<br />ASLANIDIS</h1>
@@ -116,7 +116,7 @@ const App = () => {
                 </div>
               </section>
               <nav className="fixed-navbar" ref={navbarRef}>
-                <a href="-" target="_blank" data-blobity-tooltip="View CV">
+                <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" data-blobity-tooltip="View CV">
                   <FaFilePdf />
                 </a>
                 <Link to="section1" smooth={true} duration={1000}>Home</Link>

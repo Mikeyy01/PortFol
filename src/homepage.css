@@ -53,13 +53,15 @@ h1 {
 }
 
 .resume-button {
+    font-family: 'Syne', sans-serif;
+    font-weight: 500;
     background-color: transparent;
     border: 2px solid #E4DED7;
     color: #E4DED7;
     border-radius: 5px;
     padding: 10px 20px;
-    font-family: 'Mona Sans', sans-serif;
     cursor: pointer;
+    text-decoration: none;
 }
 
 .top-right {
@@ -72,7 +74,8 @@ h1 {
     color: #E4DED7;
     text-decoration: none;
     margin-left: 20px;
-    font-family: 'Mona Sans', sans-serif;
+    font-family: 'Syne', sans-serif;
+    font-weight: Bold;
 }
 
 .bottom-left {
