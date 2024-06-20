@@ -116,11 +116,11 @@ npm run dev
 ### Story  6
 > As a user, I want to view Michael's videos that he's edited
 
-- [ ] Preview of Edited videos
+- [x] Preview of Edited videos
 
-- [ ] on hover thumbnail plays a preview of the videos
+- [x] on hover thumbnail plays a preview of the videos
 
-- [ ] on click, user is redirected to edited video link
+- [x] on click, user is redirected to edited video link
 
 ## Project File structure
 
