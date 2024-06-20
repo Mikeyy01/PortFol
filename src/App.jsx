@@ -143,6 +143,46 @@ const App = () => {
                   </div>
                 </div>
               </section>
+              <div className="section3">
+                <h2 id="section-title">
+                  CREATING STUNNING<br/>
+                  VIDEOS AND UNLEASHING<br/>
+                  FRONT-END MAGIC.
+                </h2>
+                <div className="content-wrapper">
+                  <div id="section-content">
+                    <p className="section-description" id="description1">
+                      When I'm not immersed in the captivating world of video editing, you'll find me diving into the
+                      fascinating realm of front-end development, eagerly exploring new technologies and frameworks.
+                    </p>
+                    <p className="section-description" id="description2">
+                      My passion for both video editing and front-end development drives me to constantly learn and grow
+                      in the tech industry.
+                    </p>
+                    <p className="section-description" id="description3">
+                      Now, I am excited to embrace front-end development as the next step in my career, combining my
+                      enthusiasm for creativity and my love for cutting-edge technology to craft visually stunning and
+                      user-friendly web applications.
+                    </p>
+                  </div>
+                  <div id="tools">
+                    <div className="tool-section" id="frontend-tools">
+                      <h3 className="tools-title">Front-end Tools</h3>
+                      <p className="tools-list">JavaScript(ES6), React, TypeScript, Git/GitHub.</p>
+                    </div>
+                    <div className="tool-section" id="ui-libraries">
+                      <h3 className="tools-title">UI Libraries</h3>
+                      <p className="tools-list">SASS, Tailwind CSS, Framer Motion, Bootstrap.</p>
+                    </div>
+                    <div className="tool-section" id="design-tools">
+                      <h3 className="tools-title">Design Tools</h3>
+                      <p className="tools-list">Figma, Adobe XD, Adobe Photoshop, Adobe After Effects, UX Research, UI
+                        Design, Prototyping.</p>
+                    </div>
+                  </div>
+                </div>
+              </div>
+
             </div>
         )}
       </div>

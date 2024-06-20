@@ -13,7 +13,7 @@ body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-image: url('/images/hero.jpg');
+    background-image: url('public/images/hero.jpg');
     background-size: cover;
     background-position: center;
 }
@@ -184,6 +184,65 @@ h1 {
     margin-top: 0.5em;
     font-weight: bold;
 }
+
+
+
+.section3 {
+    background-color: #09090D;
+    color: #E4DED7;
+    padding: 50px 18%;
+    text-align: left;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    justify-content: center;
+    height: 100vh;
+}
+
+#section-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 3.7em;
+    font-weight: bold;
+    line-height: 1;
+}
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    width: 100%;
+}
+
+#section-content {
+    max-width: 55%;
+}
+
+#description1, #description2, #description3 {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1em;
+    font-weight: normal;
+    margin: 20px 0;
+}
+
+#tools {
+    max-width: 20%;
+}
+
+.tool-section {
+    margin-top: 15px;
+}
+
+#frontend-tools .tools-title, #ui-libraries .tools-title, #design-tools .tools-title {
+    font-family: 'Syne', sans-serif;
+    font-size: 1.1em;
+    font-weight: bold;
+}
+
+#frontend-tools .tools-list, #ui-libraries .tools-list, #design-tools .tools-list {
+    font-family: 'Syne', sans-serif;
+    font-size: 1em;
+    font-weight: normal;
+}
+
 
 /* Responsive styling */
 @media (max-width: 1200px) {
