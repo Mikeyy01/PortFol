@@ -243,6 +243,76 @@ h1 {
     font-weight: normal;
 }
 
+.contact-section {
+    padding: 100px 10%;
+    background-color: #09090D;
+    color: #E4DED7;
+    text-align: center;
+}
+
+.contact-title {
+    font-family: 'Mona Sans Condensed', sans-serif;
+    font-weight: bold;
+    font-size: 25em;
+    margin: 0;
+}
+
+.contact-content {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 100px;
+}
+
+.contact-left, .contact-right {
+    flex: 1;
+}
+
+.contact-left {
+    text-align: left;
+}
+
+.contact-right {
+    display: flex;
+    justify-content: flex-end;
+    gap: 30px;
+}
+
+.contact-text {
+    font-family: 'Syne', sans-serif;
+    font-size: 14px;
+    margin-bottom: 10px;
+}
+
+.contact-email, .contact-social {
+    font-family: 'Syne', sans-serif;
+    font-size: 20px;
+    font-weight: bold;
+    color: #E4DED7;
+    text-decoration: none;
+}
+
+.contact-email {
+    text-decoration: underline;
+}
+
+
+.footer {
+    margin-top: 50px;
+    text-align: center;
+}
+
+.footer hr {
+    border: none;
+    border-top: 1px solid #E4DED7;
+    margin-bottom: 20px;
+}
+
+.footer-text {
+    font-family: 'Syne', sans-serif;
+    font-size: 12px;
+    text-align: left;
+    color: #E4DED7;
+}
 
 /* Responsive styling */
 @media (max-width: 1200px) {

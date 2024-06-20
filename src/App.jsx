@@ -44,6 +44,10 @@ const App = () => {
   const splitTextRef = useRef(null);
   const descriptionRefs = [useRef(null), useRef(null), useRef(null)];
   const toolsRef = useRef(null);
+  const contactSectionRef = useRef(null);
+  const contactTitleRef = useRef(null);
+  const contactTextRefs = [useRef(null), useRef(null)];
+  const contactSocialRefs = [useRef(null), useRef(null)];
 
   const laptopImgRef = useRef(null);
   const projectInfoRef = useRef(null);
@@ -134,6 +138,26 @@ const App = () => {
           start: 'top 90%',
           once: true,
         }
+      });
+
+      // GSAP contact section
+      gsap.fromTo(contactTitleRef.current,
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: contactTitleRef.current, start: 'top 90%', once: true } }
+      );
+
+      contactTextRefs.forEach((ref, index) => {
+        gsap.fromTo(ref.current,
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: index * 0.2, scrollTrigger: { trigger: ref.current, start: 'top 90%', once: true } }
+        );
+      });
+
+      contactSocialRefs.forEach((ref, index) => {
+        gsap.fromTo(ref.current,
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: index * 0.2, scrollTrigger: { trigger: ref.current, start: 'top 90%', once: true } }
+        );
       });
 
       return () => {
@@ -232,6 +256,23 @@ const App = () => {
                         Design, Prototyping.</p>
                     </div>
                   </div>
+                </div>
+              </div>
+              <div className="contact-section" ref={contactSectionRef}>
+                <h2 className="contact-title" ref={contactTitleRef}>LET'S TALK</h2>
+                <div className="contact-content">
+                  <div className="contact-left">
+                    <p className="contact-text" ref={contactTextRefs[0]}>GOT A QUESTION OR WANT TO WORK <br /> ON SOMETHING TOGETHER?</p>
+                    <a href="mailto:m.aslanidis.03@gmail.com" className="contact-email" ref={contactTextRefs[1]}>SEND ME AN EMAIL</a>
+                  </div>
+                  <div className="contact-right">
+                    <a href="https://github.com/Mikeyy01" className="contact-social" ref={contactSocialRefs[0]}>GitHub</a>
+                    <a href="https://linkedin.com/in/michael-asl" className="contact-social" ref={contactSocialRefs[1]}>LinkedIn</a>
+                  </div>
+                </div>
+                <div className="footer">
+                  <hr />
+                  <p className="footer-text">© 2024 Aslanidis, Inc. All Rights Reserved.</p>
                 </div>
               </div>
             </div>
