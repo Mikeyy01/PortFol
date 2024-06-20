@@ -13,6 +13,11 @@ import { TbMovie } from "react-icons/tb";
 import { GiOpenBook } from "react-icons/gi";
 import videoPort from './images/VideoPort.png';
 import laptopBg from './images/LaptopBG.png';
+import Map from './images/VideoPort2.png';
+import mapBg from './images/LaptopBG2.png';
+import Kue from './images/VideoPort3.png';
+import kueBg from './images/LaptopBG3.png';
+
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -211,15 +216,50 @@ const App = () => {
                 </div>
                 <div className="project-info" ref={projectInfoRef}>
                   <div className="project-icons" ref={projectIconsRef}>
-                    <div className="icon-circle" data-blobity><FaGithub /></div>
-                    <div className="icon-circle" data-blobity><TbMovie /></div>
-                    <div className="icon-circle" data-blobity><GiOpenBook /></div>
-                    <div className="icon-circle" data-blobity><FaExternalLinkAlt /></div>
+                    <a href="https://github.com/Mikeyy01/EditingShowcase" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
+                    <a href="https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaExternalLinkAlt /></a>
+                    <a href="https://newpageurl.com" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><GiOpenBook /></a>
                   </div>
                   <div className="project-details">
                     <h2>Video Portfolio</h2>
                     <p>Personal Portfolio showcasing videos I've edited.</p>
                     <p className="project-tags">JAVASCRIPT  BOOTSTRAP  ANIMATE.CSS</p>
+                  </div>
+                </div>
+              </section>
+              <section className="section2" ref={section2Ref} id="projects">
+                <div className="laptop-background" ref={laptopImgRef}>
+                  <img src={mapBg} alt="background" className="laptop-bg" />
+                  <img src={Map} alt="Map on laptop" className="video-port" />
+                </div>
+                <div className="project-info" ref={projectInfoRef}>
+                  <div className="project-icons" ref={projectIconsRef}>
+                    <a href="https://github.com/Mikeyy01/eind_intern" target="_blank" rel="noopener noreferrer"  className="icon-circle" data-blobity><FaGithub /></a>
+                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer"  className="icon-circle" data-blobity><TbMovie /></a>
+                    <div className="icon-circle" data-blobity><GiOpenBook /></div>
+                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer"  className="icon-circle" data-blobity><FaExternalLinkAlt /></a>
+                  </div>
+                  <div className="project-details">
+                    <h2>Community Interactive Map</h2>
+                    <p>Map where citizens can report problems or leave suggestions regarding a certain area.</p>
+                    <p className="project-tags">LEAFLET  REACT  SURVEY.JS</p>
+                  </div>
+                </div>
+              </section>
+              <section className="section2" ref={section2Ref} id="projects">
+                <div className="laptop-background" ref={laptopImgRef}>
+                  <img src={kueBg} alt="Laptop background" className="laptop-bg" />
+                  <img src={Kue} alt="Portfolio on laptop" className="video-port" />
+                </div>
+                <div className="project-info" ref={projectInfoRef}>
+                  <div className="project-icons" ref={projectIconsRef}>
+                    <a href="https://git.fhict.nl/I476238/kue/" target="_blank" rel="noopener noreferrer"  className="icon-circle" data-blobity><FaGithub /></a>
+                    <a href="https://www.youtube.com/watch?v=IX5ZLV0LYSs" target="_blank" rel="noopener noreferrer"  className="icon-circle" data-blobity><TbMovie  /></a>
+                  </div>
+                  <div className="project-details">
+                    <h2>Kue</h2>
+                    <p>Kue is a web app which allows the user to request a song to the DJ with a click of a button.</p>
+                    <p className="project-tags">REACT  SPOTIFY.API</p>
                   </div>
                 </div>
               </section>
