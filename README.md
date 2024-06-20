@@ -57,6 +57,7 @@ npm run dev
 - [X] ~~Link Buttons with External Content~~
 - [X] ~~Implement a Contact Form~~
 - [X] ~~Project Sections~~
+- [ ] Video Section
 - [X] ~~About Me~~
 - [ ] JSON Text Import
 - [X] ~~Website Thumbnail (When sharing website)~~
@@ -111,6 +112,15 @@ npm run dev
 
 - [X] Clicking an icon opens the corresponding profile in a new tab.
 
+---
+### Story  6
+> As a user, I want to view Michael's videos that he's edited
+
+- [ ] Preview of Edited videos
+
+- [ ] on hover thumbnail plays a preview of the videos
+
+- [ ] on click, user is redirected to edited video link
 
 ## Project File structure
 
