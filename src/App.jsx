@@ -43,7 +43,7 @@ const App = () => {
   const [loading, setLoading] = useState(true);
   const contentRef = useRef(null);
   const sectionRef = useRef(null);
-  const section2Ref = useRef(null);
+  const section2Refs = [useRef(null), useRef(null), useRef(null)];
   const headingRef = useRef(null);
   const avatarRef = useRef(null);
   const bottomLeftRef = useRef(null);
@@ -58,9 +58,9 @@ const App = () => {
   const contactTextRefs = [useRef(null), useRef(null)];
   const contactSocialRefs = [useRef(null), useRef(null)];
 
-  const laptopImgRef = useRef(null);
-  const projectInfoRef = useRef(null);
-  const projectIconsRef = useRef(null);
+  const laptopImgRefs = [useRef(null), useRef(null), useRef(null)];
+  const projectInfoRefs = [useRef(null), useRef(null), useRef(null)];
+  const projectIconsRefs = [useRef(null), useRef(null), useRef(null)];
 
   const video1GifRef = useRef(null);
   const video2GifRef = useRef(null);
@@ -101,16 +101,18 @@ const App = () => {
       // Initializing Blobity
       const blobity = initializeBlobity();
 
-      ScrollTrigger.create({
-        trigger: section2Ref.current,
-        start: "top 80%",
-        once: true,
-        onEnter: () => {
-          gsap.fromTo([laptopImgRef.current, projectInfoRef.current, projectIconsRef.current],
-              { opacity: 0, y: 50 },
-              { opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: 0.2 }
-          );
-        },
+      section2Refs.forEach((ref, index) => {
+        ScrollTrigger.create({
+          trigger: ref.current,
+          start: "top 80%",
+          once: true,
+          onEnter: () => {
+            gsap.fromTo([laptopImgRefs[index].current, projectInfoRefs[index].current, projectIconsRefs[index].current],
+                { opacity: 0, y: 50 },
+                { opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: 0.2 }
+            );
+          },
+        });
       });
 
       // GSAP section 3
@@ -205,6 +207,10 @@ const App = () => {
     lenis.scrollTo(target, { duration: 2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
   };
 
+  const handleOpenBookClick = () => {
+    lenis.scrollTo('research', { duration: 2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+  };
+
   return (
       <div className="port" style={{ height: '100vh' }}>
         {loading && <Preloader onEnd={handlePreloaderEnd} />}
@@ -239,16 +245,16 @@ const App = () => {
                 <a onClick={() => handleScrollTo('about')}>About</a>
                 <a onClick={() => handleScrollTo('contact')}>Contact</a>
               </nav>
-              <section className="section2" ref={section2Ref} id="projects">
-                <div className="laptop-background" ref={laptopImgRef}>
+              <section className="section2" ref={section2Refs[0]} id="projects">
+                <div className="laptop-background" ref={laptopImgRefs[0]}>
                   <img src={laptopBg} alt="Laptop background" className="laptop-bg" />
                   <img src={videoPort} alt="Portfolio on laptop" className="video-port" />
                 </div>
-                <div className="project-info" ref={projectInfoRef}>
-                  <div className="project-icons" ref={projectIconsRef}>
+                <div className="project-info" ref={projectInfoRefs[0]}>
+                  <div className="project-icons" ref={projectIconsRefs[0]}>
                     <a href="https://github.com/Mikeyy01/EditingShowcase" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
                     <a href="https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaExternalLinkAlt /></a>
-                    <a href="https://newpageurl.com" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><GiOpenBook /></a>
+                    <a onClick={handleOpenBookClick} className="icon-circle" data-blobity><GiOpenBook /></a>
                   </div>
                   <div className="project-details">
                     <h2>Social Media Portfolio</h2>
@@ -257,13 +263,13 @@ const App = () => {
                   </div>
                 </div>
               </section>
-              <section className="section2" ref={section2Ref} id="projects">
-                <div className="laptop-background" ref={laptopImgRef}>
+              <section className="section2" ref={section2Refs[1]} id="projects">
+                <div className="laptop-background" ref={laptopImgRefs[1]}>
                   <img src={mapBg} alt="background" className="laptop-bg" />
                   <img src={Map} alt="Map on laptop" className="video-port" />
                 </div>
-                <div className="project-info" ref={projectInfoRef}>
-                  <div className="project-icons" ref={projectIconsRef}>
+                <div className="project-info" ref={projectInfoRefs[1]}>
+                  <div className="project-icons" ref={projectIconsRefs[1]}>
                     <a href="https://github.com/Mikeyy01/eind_intern" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
                     <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><TbMovie /></a>
                     <div className="icon-circle" data-blobity><GiOpenBook /></div>
@@ -276,13 +282,13 @@ const App = () => {
                   </div>
                 </div>
               </section>
-              <section className="section2" ref={section2Ref} id="projects">
-                <div className="laptop-background" ref={laptopImgRef}>
+              <section className="section2" ref={section2Refs[2]} id="projects">
+                <div className="laptop-background" ref={laptopImgRefs[2]}>
                   <img src={kueBg} alt="Laptop background" className="laptop-bg" />
                   <img src={Kue} alt="Portfolio on laptop" className="video-port" />
                 </div>
-                <div className="project-info" ref={projectInfoRef}>
-                  <div className="project-icons" ref={projectIconsRef}>
+                <div className="project-info" ref={projectInfoRefs[2]}>
+                  <div className="project-icons" ref={projectIconsRefs[2]}>
                     <a href="https://git.fhict.nl/I476238/kue/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
                     <a href="https://www.youtube.com/watch?v=IX5ZLV0LYSs" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><TbMovie /></a>
                   </div>
