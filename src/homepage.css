@@ -314,6 +314,91 @@ h1 {
     color: #E4DED7;
 }
 
+
+.video-showcase {
+    background-color: #09090D;
+    font-family: 'Syne', sans-serif;
+    font-size: 2em;
+    padding: 50px 0;
+    text-align: center;
+}
+
+.video-showcase h2 {
+    color: #E4DED7;
+}
+
+.video-grid {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.video-item {
+    position: relative;
+    overflow: hidden;
+    width: 300px;
+    height: 500px;
+    cursor: pointer;
+    transition: width 0.3s ease;
+}
+
+.video-item:hover {
+    width: 500px;
+}
+
+.video-thumbnail, .video-gif {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 500px;
+    height: 500px;
+    object-fit: cover;
+}
+
+.video-thumbnail {
+    opacity: 1;
+    filter: grayscale(100%);
+
+}
+
+.video-item:hover .video-thumbnail {
+    opacity: 0;
+    filter: grayscale(0%);
+}
+
+.video-gif {
+    opacity: 0;
+}
+
+.video-item:hover .video-gif {
+    opacity: 1;
+}
+
+.video-info {
+    position: absolute;
+    bottom: 10px;
+    left: 10px;
+    color: white;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+}
+
+.video-item:hover .video-info {
+    opacity: 1;
+}
+
+.video-title {
+    font-size: 26px;
+    font-weight: 700;
+    margin: 0;
+}
+
+.video-arrow {
+    font-size: 24px;
+}
+
+
+
 /* Responsive styling */
 @media (max-width: 1200px) {
     h1 {

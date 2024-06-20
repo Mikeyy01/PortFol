@@ -11,13 +11,19 @@ import initializeBlobity from './blobityConfig';
 import { FaFilePdf, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { TbMovie } from "react-icons/tb";
 import { GiOpenBook } from "react-icons/gi";
+import { IoIosArrowForward } from "react-icons/io";
 import videoPort from './images/VideoPort.png';
 import laptopBg from './images/LaptopBG.png';
 import Map from './images/VideoPort2.png';
 import mapBg from './images/LaptopBG2.png';
 import Kue from './images/VideoPort3.png';
 import kueBg from './images/LaptopBG3.png';
-
+import video1 from './images/video1.png';
+import video1Gif from './images/video1.gif';
+import video2 from './images/video2.png';
+import video2Gif from './images/video2.gif';
+import video3 from './images/video3.png';
+import video3Gif from './images/video3.gif';
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -56,8 +62,16 @@ const App = () => {
   const projectInfoRef = useRef(null);
   const projectIconsRef = useRef(null);
 
+  const video1GifRef = useRef(null);
+  const video2GifRef = useRef(null);
+  const video3GifRef = useRef(null);
+
   const handlePreloaderEnd = () => {
     setLoading(false);
+  };
+
+  const handleMouseEnter = (gifRef) => {
+    gifRef.current.src = gifRef.current.src;
   };
 
   useEffect(() => {
@@ -206,6 +220,7 @@ const App = () => {
                 </a>
                 <a onClick={() => handleScrollTo('home')}>Home</a>
                 <a onClick={() => handleScrollTo('projects')}>Projects</a>
+                <a onClick={() => handleScrollTo('video-showcase')}>Editing</a>
                 <a onClick={() => handleScrollTo('about')}>About</a>
                 <a onClick={() => handleScrollTo('contact')}>Contact</a>
               </nav>
@@ -221,7 +236,7 @@ const App = () => {
                     <a href="https://newpageurl.com" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><GiOpenBook /></a>
                   </div>
                   <div className="project-details">
-                    <h2>Video Portfolio</h2>
+                    <h2>Social Media Portfolio</h2>
                     <p>Personal Portfolio showcasing videos I've edited.</p>
                     <p className="project-tags">JAVASCRIPT  BOOTSTRAP  ANIMATE.CSS</p>
                   </div>
@@ -234,10 +249,10 @@ const App = () => {
                 </div>
                 <div className="project-info" ref={projectInfoRef}>
                   <div className="project-icons" ref={projectIconsRef}>
-                    <a href="https://github.com/Mikeyy01/eind_intern" target="_blank" rel="noopener noreferrer"  className="icon-circle" data-blobity><FaGithub /></a>
-                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer"  className="icon-circle" data-blobity><TbMovie /></a>
+                    <a href="https://github.com/Mikeyy01/eind_intern" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
+                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><TbMovie /></a>
                     <div className="icon-circle" data-blobity><GiOpenBook /></div>
-                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer"  className="icon-circle" data-blobity><FaExternalLinkAlt /></a>
+                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaExternalLinkAlt /></a>
                   </div>
                   <div className="project-details">
                     <h2>Community Interactive Map</h2>
@@ -253,8 +268,8 @@ const App = () => {
                 </div>
                 <div className="project-info" ref={projectInfoRef}>
                   <div className="project-icons" ref={projectIconsRef}>
-                    <a href="https://git.fhict.nl/I476238/kue/" target="_blank" rel="noopener noreferrer"  className="icon-circle" data-blobity><FaGithub /></a>
-                    <a href="https://www.youtube.com/watch?v=IX5ZLV0LYSs" target="_blank" rel="noopener noreferrer"  className="icon-circle" data-blobity><TbMovie  /></a>
+                    <a href="https://git.fhict.nl/I476238/kue/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
+                    <a href="https://www.youtube.com/watch?v=IX5ZLV0LYSs" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><TbMovie /></a>
                   </div>
                   <div className="project-details">
                     <h2>Kue</h2>
@@ -263,6 +278,32 @@ const App = () => {
                   </div>
                 </div>
               </section>
+              <div className="video-showcase" id="video-showcase">
+                <h2>Videos I've Edited</h2>
+                <div className="video-grid">
+                  <a href="https://youtu.be/HtW-QuUeaVY" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity onMouseEnter={() => handleMouseEnter(video1GifRef)}>
+                    <img src={video1} alt="Video 1" className="video-thumbnail" />
+                    <img src={video1Gif} alt="Video 1 Gif" className="video-gif" ref={video1GifRef} />
+                    <div className="video-info">
+                      <p className="video-title" data-blobity>Waddle Ad <IoIosArrowForward /></p>
+                    </div>
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=BvwRs632UT8" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity onMouseEnter={() => handleMouseEnter(video2GifRef)}>
+                    <img src={video2} alt="Video 2" className="video-thumbnail" />
+                    <img src={video2Gif} alt="Video 2 Gif" className="video-gif" ref={video2GifRef} />
+                    <div className="video-info">
+                      <p className="video-title" data-blobity>$50,000 Island <IoIosArrowForward /></p>
+                    </div>
+                  </a>
+                  <a href="https://www.youtube.com/watch?v=pTXcpIg58rE" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity onMouseEnter={() => handleMouseEnter(video3GifRef)}>
+                    <img src={video3} alt="Video 3" className="video-thumbnail" />
+                    <img src={video3Gif} alt="Video 3 Gif" className="video-gif" ref={video3GifRef} />
+                    <div className="video-info">
+                      <p className="video-title" data-blobity>All Star Football <IoIosArrowForward /></p>
+                    </div>
+                  </a>
+                </div>
+              </div>
               <div className="section3" ref={section3Ref} id="about">
                 <h2 id="section-title" ref={splitTextRef}>
                   CREATING STUNNING<br />
