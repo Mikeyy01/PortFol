@@ -54,13 +54,13 @@ npm run dev
 - [X] ~~Utilize Blobbity~~
 - [X] ~~Implement Smooth Scrolling~~
 - [x] ~~Implement GSAP~~
-- [ ] Link Buttons with External Content
-- [ ] Implement a Contact Form
-- [ ] Project Sections
-- [X] About Me
+- [X] ~~Link Buttons with External Content~~
+- [X] ~~Implement a Contact Form~~
+- [X] ~~Project Sections~~
+- [X] ~~About Me~~
 - [ ] JSON Text Import
 - [X] ~~Website Thumbnail (When sharing website)~~
-- [ ] Website Hosting
+- [X] ~~Website Hosting~~
 
 ## User Stories  & Success Criteria
 ### Story  1
@@ -79,8 +79,8 @@ npm run dev
 
 
 ##### Success Criteria:
-- [ ] A "Projects" section lists various projects with brief descriptions.
-- [ ] Each project has a link to more detailed information or a live demo.
+- [X] A "Projects" section lists various projects with brief descriptions.
+- [X] Each project has a link to more detailed information or a live demo.
 - [X] Projects are visually represented with images or screenshots.
 
 ---
@@ -89,7 +89,7 @@ npm run dev
 
 
 ##### Success Criteria:
-- [ ] A "Contact" section or form is available and easily accessible.
+- [X] A "Contact" section or form is available and easily accessible.
 
 ---
 ### Story  4
@@ -107,7 +107,7 @@ npm run dev
 > As a user, I want to view Michael's profile pages on different platforms, so I can connect with him there.
 
 
-- [ ] GitHub and LinkedIn links are displayed in the header and footer.
+- [X] GitHub and LinkedIn links are displayed in the header and footer.
 
 - [X] Clicking an icon opens the corresponding profile in a new tab.
 
