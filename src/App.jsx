@@ -3,7 +3,6 @@ import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 import Lenis from 'lenis';
-import { Link } from 'react-scroll';
 import Preloader from './Preloader';
 import './homepage.css';
 import './navbar.css';
@@ -20,15 +19,14 @@ gsap.registerPlugin(ScrollTrigger);
 const lenis = new Lenis();
 
 lenis.on('scroll', (e) => {
-  // console.log(e)
+  ScrollTrigger.update();
 });
 
-function raf(time) {
-  lenis.raf(time);
-  requestAnimationFrame(raf);
-}
+gsap.ticker.add((time) => {
+  lenis.raf(time * 1000);
+});
 
-requestAnimationFrame(raf);
+gsap.ticker.lagSmoothing(0);
 
 const App = () => {
   const [loading, setLoading] = useState(true);
@@ -167,12 +165,18 @@ const App = () => {
     }
   }, [loading]);
 
+  //Lenis Button click scroll ease
+  const handleScrollTo = (id) => {
+    const target = document.getElementById(id);
+    lenis.scrollTo(target, { duration: 2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
+  };
+
   return (
       <div className="port" style={{ height: '100vh' }}>
         {loading && <Preloader onEnd={handlePreloaderEnd} />}
         {!loading && (
             <div ref={contentRef}>
-              <section className="section1" ref={sectionRef}>
+              <section className="section1" ref={sectionRef} id="home">
                 <div className="top-left">
                   <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" className="resume-button" data-blobity>VIEW RESUME</a>
                 </div>
@@ -195,12 +199,12 @@ const App = () => {
                 <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" data-blobity-tooltip="View CV">
                   <FaFilePdf />
                 </a>
-                <Link to="section1" smooth={true} duration={1000}>Home</Link>
-                <Link to="section2" smooth={true} duration={1000}>Projects</Link>
-                <a href="#about">About</a>
-                <a href="#contact">Contact</a>
+                <a onClick={() => handleScrollTo('home')}>Home</a>
+                <a onClick={() => handleScrollTo('projects')}>Projects</a>
+                <a onClick={() => handleScrollTo('about')}>About</a>
+                <a onClick={() => handleScrollTo('contact')}>Contact</a>
               </nav>
-              <section className="section2" ref={section2Ref}>
+              <section className="section2" ref={section2Ref} id="projects">
                 <div className="laptop-background" ref={laptopImgRef}>
                   <img src={laptopBg} alt="Laptop background" className="laptop-bg" />
                   <img src={videoPort} alt="Portfolio on laptop" className="video-port" />
@@ -219,7 +223,7 @@ const App = () => {
                   </div>
                 </div>
               </section>
-              <div className="section3" ref={section3Ref}>
+              <div className="section3" ref={section3Ref} id="about">
                 <h2 id="section-title" ref={splitTextRef}>
                   CREATING STUNNING<br />
                   VIDEOS AND UNLEASHING<br />
@@ -258,7 +262,7 @@ const App = () => {
                   </div>
                 </div>
               </div>
-              <div className="contact-section" ref={contactSectionRef}>
+              <div className="contact-section" ref={contactSectionRef} id="contact">
                 <h2 className="contact-title" ref={contactTitleRef}>LET'S TALK</h2>
                 <div className="contact-content">
                   <div className="contact-left">
