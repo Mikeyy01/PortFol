@@ -57,7 +57,7 @@ npm run dev
 - [ ] Link Buttons with External Content
 - [ ] Implement a Contact Form
 - [ ] Project Sections
-- [ ] About Me
+- [X] About Me
 - [ ] JSON Text Import
 - [X] ~~Website Thumbnail (When sharing website)~~
 - [ ] Website Hosting
