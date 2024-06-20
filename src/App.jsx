@@ -65,6 +65,8 @@ const App = () => {
   const video1GifRef = useRef(null);
   const video2GifRef = useRef(null);
   const video3GifRef = useRef(null);
+  const videoSectionRef = useRef(null);
+  const videoRefs = [useRef(null), useRef(null), useRef(null)];
 
   const handlePreloaderEnd = () => {
     setLoading(false);
@@ -177,6 +179,19 @@ const App = () => {
         );
       });
 
+      // GSAP video section
+      gsap.fromTo(videoSectionRef.current,
+          { opacity: 0, y: 50 },
+          { opacity: 1, y: 0, duration: 1, ease: 'power3.out', scrollTrigger: { trigger: videoSectionRef.current, start: 'top 90%', once: true } }
+      );
+
+      videoRefs.forEach((ref, index) => {
+        gsap.fromTo(ref.current,
+            { opacity: 0, y: 50 },
+            { opacity: 1, y: 0, duration: 1, ease: 'power3.out', delay: index * 0.2, scrollTrigger: { trigger: ref.current, start: 'top 90%', once: true } }
+        );
+      });
+
       return () => {
         blobity.destroy();
         ScrollTrigger.kill();
@@ -279,23 +294,23 @@ const App = () => {
                 </div>
               </section>
               <div className="video-showcase" id="video-showcase">
-                <h2>Videos I've Edited</h2>
-                <div className="video-grid">
-                  <a href="https://youtu.be/HtW-QuUeaVY" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity onMouseEnter={() => handleMouseEnter(video1GifRef)}>
+                <h2 ref={videoSectionRef}>Videos I've Edited</h2>
+                <div className="video-grid" ref={videoSectionRef}>
+                  <a href="https://youtu.be/HtW-QuUeaVY" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity ref={videoRefs[0]} onMouseEnter={() => handleMouseEnter(video1GifRef)}>
                     <img src={video1} alt="Video 1" className="video-thumbnail" />
                     <img src={video1Gif} alt="Video 1 Gif" className="video-gif" ref={video1GifRef} />
                     <div className="video-info">
                       <p className="video-title" data-blobity>Waddle Ad <IoIosArrowForward /></p>
                     </div>
                   </a>
-                  <a href="https://www.youtube.com/watch?v=BvwRs632UT8" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity onMouseEnter={() => handleMouseEnter(video2GifRef)}>
+                  <a href="https://www.youtube.com/watch?v=BvwRs632UT8" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity ref={videoRefs[1]} onMouseEnter={() => handleMouseEnter(video2GifRef)}>
                     <img src={video2} alt="Video 2" className="video-thumbnail" />
                     <img src={video2Gif} alt="Video 2 Gif" className="video-gif" ref={video2GifRef} />
                     <div className="video-info">
                       <p className="video-title" data-blobity>$50,000 Island <IoIosArrowForward /></p>
                     </div>
                   </a>
-                  <a href="https://www.youtube.com/watch?v=pTXcpIg58rE" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity onMouseEnter={() => handleMouseEnter(video3GifRef)}>
+                  <a href="https://www.youtube.com/watch?v=pTXcpIg58rE" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity ref={videoRefs[2]} onMouseEnter={() => handleMouseEnter(video3GifRef)}>
                     <img src={video3} alt="Video 3" className="video-thumbnail" />
                     <img src={video3Gif} alt="Video 3 Gif" className="video-gif" ref={video3GifRef} />
                     <div className="video-info">
