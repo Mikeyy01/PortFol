@@ -1,6 +1,7 @@
 import React, { useState, useEffect, useRef } from 'react';
 import { gsap } from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
+import SplitType from 'split-type';
 import Lenis from 'lenis';
 import { Link } from 'react-scroll';
 import Preloader from './Preloader';
@@ -39,6 +40,10 @@ const App = () => {
   const bottomLeftRef = useRef(null);
   const bottomRightRef = useRef(null);
   const navbarRef = useRef(null);
+  const section3Ref = useRef(null);
+  const splitTextRef = useRef(null);
+  const descriptionRefs = [useRef(null), useRef(null), useRef(null)];
+  const toolsRef = useRef(null);
 
   const laptopImgRef = useRef(null);
   const projectInfoRef = useRef(null);
@@ -76,12 +81,59 @@ const App = () => {
       ScrollTrigger.create({
         trigger: section2Ref.current,
         start: "top 80%",
+        once: true,
         onEnter: () => {
           gsap.fromTo([laptopImgRef.current, projectInfoRef.current, projectIconsRef.current],
               { opacity: 0, y: 50 },
               { opacity: 1, y: 0, duration: 1, ease: 'power3.out', stagger: 0.2 }
           );
         },
+      });
+
+      // GSAP section 3
+      const text = new SplitType(splitTextRef.current, { types: 'words, chars' });
+
+      gsap.from(text.chars, {
+        opacity: 0,
+        y: '100%',
+        rotationZ: 10,
+        duration: 0.5,
+        stagger: { each: 0.03 },
+        scrollTrigger: {
+          trigger: section3Ref.current,
+          start: 'top 90%',
+          once: true,
+        }
+      });
+
+      //descriptions
+      descriptionRefs.forEach((ref, index) => {
+        gsap.from(ref.current, {
+          opacity: 0,
+          y: 20,
+          duration: 0.6,
+          delay: 1,
+          ease: 'power1.out',
+          scrollTrigger: {
+            trigger: section3Ref.current,
+            start: 'top 90%',
+            once: true,
+          }
+        });
+      });
+
+      //tool section
+      gsap.from(toolsRef.current, {
+        opacity: 0,
+        y: 20,
+        duration: 0.6,
+        delay: 1.5,
+        ease: 'power1.out',
+        scrollTrigger: {
+          trigger: section3Ref.current,
+          start: 'top 90%',
+          once: true,
+        }
       });
 
       return () => {
@@ -126,8 +178,8 @@ const App = () => {
               </nav>
               <section className="section2" ref={section2Ref}>
                 <div className="laptop-background" ref={laptopImgRef}>
-                  <img src={laptopBg} alt="Laptop background" className="laptop-bg"/>
-                  <img src={videoPort} alt="Portfolio on laptop" className="video-port"/>
+                  <img src={laptopBg} alt="Laptop background" className="laptop-bg" />
+                  <img src={videoPort} alt="Portfolio on laptop" className="video-port" />
                 </div>
                 <div className="project-info" ref={projectInfoRef}>
                   <div className="project-icons" ref={projectIconsRef}>
@@ -143,29 +195,29 @@ const App = () => {
                   </div>
                 </div>
               </section>
-              <div className="section3">
-                <h2 id="section-title">
-                  CREATING STUNNING<br/>
-                  VIDEOS AND UNLEASHING<br/>
+              <div className="section3" ref={section3Ref}>
+                <h2 id="section-title" ref={splitTextRef}>
+                  CREATING STUNNING<br />
+                  VIDEOS AND UNLEASHING<br />
                   FRONT-END MAGIC.
                 </h2>
                 <div className="content-wrapper">
                   <div id="section-content">
-                    <p className="section-description" id="description1">
+                    <p className="section-description" id="description1" ref={descriptionRefs[0]}>
                       When I'm not immersed in the captivating world of video editing, you'll find me diving into the
                       fascinating realm of front-end development, eagerly exploring new technologies and frameworks.
                     </p>
-                    <p className="section-description" id="description2">
+                    <p className="section-description" id="description2" ref={descriptionRefs[1]}>
                       My passion for both video editing and front-end development drives me to constantly learn and grow
                       in the tech industry.
                     </p>
-                    <p className="section-description" id="description3">
+                    <p className="section-description" id="description3" ref={descriptionRefs[2]}>
                       Now, I am excited to embrace front-end development as the next step in my career, combining my
                       enthusiasm for creativity and my love for cutting-edge technology to craft visually stunning and
                       user-friendly web applications.
                     </p>
                   </div>
-                  <div id="tools">
+                  <div id="tools" ref={toolsRef}>
                     <div className="tool-section" id="frontend-tools">
                       <h3 className="tools-title">Front-end Tools</h3>
                       <p className="tools-list">JavaScript(ES6), React, TypeScript, Git/GitHub.</p>
@@ -182,7 +234,6 @@ const App = () => {
                   </div>
                 </div>
               </div>
-
             </div>
         )}
       </div>
