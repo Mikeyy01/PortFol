@@ -57,7 +57,7 @@ npm run dev
 - [X] ~~Link Buttons with External Content~~
 - [X] ~~Implement a Contact Form~~
 - [X] ~~Project Sections~~
-- [ ] Video Section
+- [X] Video Section
 - [X] ~~About Me~~
 - [ ] JSON Text Import
 - [X] ~~Website Thumbnail (When sharing website)~~
