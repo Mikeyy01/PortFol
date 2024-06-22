@@ -1,6 +1,6 @@
 # Portfolio - Semester 6
 
-TBA
+Welcome to my portfolio website! In this website you'll find the projects that I've worked on as ICT & Media Design Student. Additionally, you can find videos that I've edited as a Video Editor.
 
 ## Live Website
 
