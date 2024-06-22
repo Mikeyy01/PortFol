@@ -8,7 +8,7 @@ import './homepage.css';
 import './navbar.css';
 import './fonts.css';
 import initializeBlobity from './blobityConfig';
-import { FaFilePdf, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaFilePdf, FaGithub, FaExternalLinkAlt, FaLinkedin } from "react-icons/fa";
 import { TbMovie } from "react-icons/tb";
 import { GiOpenBook } from "react-icons/gi";
 import { IoIosArrowForward } from "react-icons/io";
@@ -194,6 +194,20 @@ const App = () => {
         );
       });
 
+      // ScrollTrigger for active nav link
+      const sections = ['home', 'projects1', 'projects2', 'projects3', 'video-showcase', 'about', 'contact'];
+      sections.forEach((id, index) => {
+        ScrollTrigger.create({
+          trigger: `#${id}`,
+          start: 'top center',
+          end: 'bottom center',
+          onEnter: () => setActiveNav(index),
+          onEnterBack: () => setActiveNav(index),
+          onLeave: () => setActiveNav(-1),
+          onLeaveBack: () => setActiveNav(-1),
+        });
+      });
+
       return () => {
         blobity.destroy();
         ScrollTrigger.kill();
@@ -201,8 +215,12 @@ const App = () => {
     }
   }, [loading]);
 
+  // State to keep track of the active nav link
+  const [activeNav, setActiveNav] = useState(0);
+
   //Lenis Button click scroll ease
-  const handleScrollTo = (id) => {
+  const handleScrollTo = (id, index) => {
+    setActiveNav(index);
     const target = document.getElementById(id);
     lenis.scrollTo(target, { duration: 2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
   };
@@ -221,8 +239,12 @@ const App = () => {
                   <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" className="resume-button" data-blobity>VIEW RESUME</a>
                 </div>
                 <div className="top-right">
-                  <a href="https://github.com/Mikeyy01" className="social-link" data-blobity>GitHub</a>
-                  <a href="https://linkedin.com/in/michael-asl" className="social-link" data-blobity>LinkedIn</a>
+                  <a href="https://github.com/Mikeyy01" className="social-link" data-blobity>
+                    <FaGithub style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />GitHub
+                  </a>
+                  <a href="https://linkedin.com/in/michael-asl" className="social-link" data-blobity>
+                    <FaLinkedin style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />LinkedIn
+                  </a>
                 </div>
                 <div className="content">
                   <h1 ref={headingRef}>MICHAEL<br />ASLANIDIS</h1>
@@ -239,63 +261,63 @@ const App = () => {
                 <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" data-blobity-tooltip="View CV">
                   <FaFilePdf />
                 </a>
-                <a onClick={() => handleScrollTo('home')}>Home</a>
-                <a onClick={() => handleScrollTo('projects')}>Projects</a>
-                <a onClick={() => handleScrollTo('video-showcase')}>Editing</a>
-                <a onClick={() => handleScrollTo('about')}>About</a>
-                <a onClick={() => handleScrollTo('contact')}>Contact</a>
+                <a onClick={() => handleScrollTo('home', 0)} className={activeNav === 0 ? 'active' : ''}>Home</a>
+                <a onClick={() => handleScrollTo('projects1', 1)} className={activeNav >= 1 && activeNav <= 3 ? 'active' : ''}>Projects</a>
+                <a onClick={() => handleScrollTo('video-showcase', 4)} className={activeNav === 4 ? 'active' : ''}>Editing</a>
+                <a onClick={() => handleScrollTo('about', 5)} className={activeNav === 5 ? 'active' : ''}>About</a>
+                <a onClick={() => handleScrollTo('contact', 6)} className={activeNav === 6 ? 'active' : ''}>Contact</a>
               </nav>
-              <section className="section2" ref={section2Refs[0]} id="projects">
+              <section className="section2" ref={section2Refs[0]} id="projects1">
                 <div className="laptop-background" ref={laptopImgRefs[0]}>
                   <img src={laptopBg} alt="Laptop background" className="laptop-bg" />
                   <img src={videoPort} alt="Portfolio on laptop" className="video-port" />
                 </div>
                 <div className="project-info" ref={projectInfoRefs[0]}>
-                  <div className="project-icons" ref={projectIconsRefs[0]}>
-                    <a href="https://github.com/Mikeyy01/EditingShowcase" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
-                    <a href="https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaExternalLinkAlt /></a>
-                    <a onClick={handleOpenBookClick} className="icon-circle" data-blobity><GiOpenBook /></a>
-                  </div>
                   <div className="project-details">
                     <h2>Social Media Portfolio</h2>
                     <p>Personal Portfolio showcasing videos I've edited.</p>
                     <p className="project-tags">JAVASCRIPT  BOOTSTRAP  ANIMATE.CSS</p>
+                    <div className="project-icons" ref={projectIconsRefs[0]}>
+                      <a href="https://github.com/Mikeyy01/EditingShowcase" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
+                      <a href="https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="View Website"><FaExternalLinkAlt /></a>
+                      <a onClick={handleOpenBookClick} className="icon-circle" data-blobity-tooltip="Research Process"><GiOpenBook /></a>
+                    </div>
                   </div>
                 </div>
               </section>
-              <section className="section2" ref={section2Refs[1]} id="projects">
+              <section className="section2" ref={section2Refs[1]} id="projects2">
                 <div className="laptop-background" ref={laptopImgRefs[1]}>
                   <img src={mapBg} alt="background" className="laptop-bg" />
                   <img src={Map} alt="Map on laptop" className="video-port" />
                 </div>
                 <div className="project-info" ref={projectInfoRefs[1]}>
-                  <div className="project-icons" ref={projectIconsRefs[1]}>
-                    <a href="https://github.com/Mikeyy01/eind_intern" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
-                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><TbMovie /></a>
-                    <div className="icon-circle" data-blobity><GiOpenBook /></div>
-                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaExternalLinkAlt /></a>
-                  </div>
                   <div className="project-details">
                     <h2>Community Interactive Map</h2>
                     <p>Map where citizens can report problems or leave suggestions regarding a certain area.</p>
                     <p className="project-tags">LEAFLET  REACT  SURVEY.JS</p>
+                    <div className="project-icons" ref={projectIconsRefs[1]}>
+                      <a href="https://github.com/Mikeyy01/eind_intern" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
+                      <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Video Walkthrough"><TbMovie /></a>
+                      <div className="icon-circle" data-blobity-tooltip="Research Process"><GiOpenBook /></div>
+                      <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="View Website"><FaExternalLinkAlt /></a>
+                    </div>
                   </div>
                 </div>
               </section>
-              <section className="section2" ref={section2Refs[2]} id="projects">
+              <section className="section2" ref={section2Refs[2]} id="projects3">
                 <div className="laptop-background" ref={laptopImgRefs[2]}>
                   <img src={kueBg} alt="Laptop background" className="laptop-bg" />
                   <img src={Kue} alt="Portfolio on laptop" className="video-port" />
                 </div>
                 <div className="project-info" ref={projectInfoRefs[2]}>
-                  <div className="project-icons" ref={projectIconsRefs[2]}>
-                    <a href="https://git.fhict.nl/I476238/kue/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
-                    <a href="https://www.youtube.com/watch?v=IX5ZLV0LYSs" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><TbMovie /></a>
-                  </div>
                   <div className="project-details">
                     <h2>Kue</h2>
                     <p>Kue is a web app which allows the user to request a song to the DJ with a click of a button.</p>
                     <p className="project-tags">REACT  SPOTIFY.API</p>
+                    <div className="project-icons" ref={projectIconsRefs[2]}>
+                      <a href="https://git.fhict.nl/I476238/kue/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
+                      <a href="https://www.youtube.com/watch?v=IX5ZLV0LYSs" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Video Commercial"><TbMovie /></a>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -366,14 +388,19 @@ const App = () => {
               </div>
               <div className="contact-section" ref={contactSectionRef} id="contact">
                 <h2 className="contact-title" ref={contactTitleRef}>LET'S TALK</h2>
+                <p className="availability-text">I'm Available For Work</p>
                 <div className="contact-content">
                   <div className="contact-left">
                     <p className="contact-text" ref={contactTextRefs[0]}>GOT A QUESTION OR WANT TO WORK <br /> ON SOMETHING TOGETHER?</p>
                     <a href="mailto:m.aslanidis.03@gmail.com" className="contact-email" ref={contactTextRefs[1]}>SEND ME AN EMAIL</a>
                   </div>
                   <div className="contact-right">
-                    <a href="https://github.com/Mikeyy01" className="contact-social" ref={contactSocialRefs[0]}>GitHub</a>
-                    <a href="https://linkedin.com/in/michael-asl" className="contact-social" ref={contactSocialRefs[1]}>LinkedIn</a>
+                    <a href="https://github.com/Mikeyy01" className="contact-social" ref={contactSocialRefs[0]}>
+                      <FaGithub style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/michael-asl" className="contact-social" ref={contactSocialRefs[1]}>
+                      <FaLinkedin style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />LinkedIn
+                    </a>
                   </div>
                 </div>
                 <div className="footer">

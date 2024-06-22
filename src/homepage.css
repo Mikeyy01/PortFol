@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -144,10 +146,8 @@ h1 {
 }
 
 .project-icons {
-    position: absolute;
-    top: -200px;
-    right: 0;
     display: flex;
+    margin-top: 1em;
 }
 
 .icon-circle {
@@ -161,7 +161,7 @@ h1 {
     color: #09090D;
     font-size: 1.5em;
     cursor: pointer;
-    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .project-details h2 {
@@ -190,7 +190,7 @@ h1 {
 .section3 {
     background-color: #09090D;
     color: #E4DED7;
-    padding: 50px 18%;
+    padding: 50px 12%;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -201,7 +201,7 @@ h1 {
 
 #section-title {
     font-family: 'Syne', sans-serif;
-    font-size: 3.7em;
+    font-size: 4.5em;
     font-weight: bold;
     line-height: 1;
 }
@@ -218,13 +218,13 @@ h1 {
 
 #description1, #description2, #description3 {
     font-family: 'Syne', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.5em;
     font-weight: normal;
     margin: 20px 0;
 }
 
 #tools {
-    max-width: 20%;
+    max-width: 25%;
 }
 
 .tool-section {
@@ -233,7 +233,7 @@ h1 {
 
 #frontend-tools .tools-title, #ui-libraries .tools-title, #design-tools .tools-title {
     font-family: 'Syne', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
@@ -256,6 +256,15 @@ h1 {
     font-size: 25em;
     margin: 0;
 }
+
+.availability-text {
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 2em;
+    margin-top: -50px; /* Adjust based on your layout */
+    margin-left: 5px; /* Adjust based on your layout */
+    color: #E4DED7;
+}
+
 
 .contact-content {
     display: flex;

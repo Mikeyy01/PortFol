@@ -22,8 +22,15 @@
     color: #E4DED7;
     text-decoration: none;
     margin: 0 10px;
+    position: relative;
+    padding-bottom: 5px;
 }
 
 .fixed-navbar svg {
     margin-right: 10px;
 }
+
+.fixed-navbar a.active {
+    border-bottom: 2px solid #E4DED7;
+}
+
