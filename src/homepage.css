@@ -144,10 +144,8 @@ h1 {
 }
 
 .project-icons {
-    position: absolute;
-    top: -200px;
-    right: 0;
     display: flex;
+    margin-top: 1em;
 }
 
 .icon-circle {
@@ -161,7 +159,7 @@ h1 {
     color: #09090D;
     font-size: 1.5em;
     cursor: pointer;
-    margin-left: 1em;
+    margin-right: 1em;
 }
 
 .project-details h2 {

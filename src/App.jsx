@@ -273,15 +273,15 @@ const App = () => {
                   <img src={videoPort} alt="Portfolio on laptop" className="video-port" />
                 </div>
                 <div className="project-info" ref={projectInfoRefs[0]}>
-                  <div className="project-icons" ref={projectIconsRefs[0]}>
-                    <a href="https://github.com/Mikeyy01/EditingShowcase" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
-                    <a href="https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="View Website"><FaExternalLinkAlt /></a>
-                    <a onClick={handleOpenBookClick} className="icon-circle" data-blobity-tooltip="Research Process"><GiOpenBook /></a>
-                  </div>
                   <div className="project-details">
                     <h2>Social Media Portfolio</h2>
                     <p>Personal Portfolio showcasing videos I've edited.</p>
                     <p className="project-tags">JAVASCRIPT  BOOTSTRAP  ANIMATE.CSS</p>
+                    <div className="project-icons" ref={projectIconsRefs[0]}>
+                      <a href="https://github.com/Mikeyy01/EditingShowcase" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
+                      <a href="https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="View Website"><FaExternalLinkAlt /></a>
+                      <a onClick={handleOpenBookClick} className="icon-circle" data-blobity-tooltip="Research Process"><GiOpenBook /></a>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -291,16 +291,16 @@ const App = () => {
                   <img src={Map} alt="Map on laptop" className="video-port" />
                 </div>
                 <div className="project-info" ref={projectInfoRefs[1]}>
-                  <div className="project-icons" ref={projectIconsRefs[1]}>
-                    <a href="https://github.com/Mikeyy01/eind_intern" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
-                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Video Walkthrough"><TbMovie /></a>
-                    <div className="icon-circle" data-blobity-tooltip="Research Process"><GiOpenBook /></div>
-                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="View Website"><FaExternalLinkAlt /></a>
-                  </div>
                   <div className="project-details">
                     <h2>Community Interactive Map</h2>
                     <p>Map where citizens can report problems or leave suggestions regarding a certain area.</p>
                     <p className="project-tags">LEAFLET  REACT  SURVEY.JS</p>
+                    <div className="project-icons" ref={projectIconsRefs[1]}>
+                      <a href="https://github.com/Mikeyy01/eind_intern" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
+                      <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Video Walkthrough"><TbMovie /></a>
+                      <div className="icon-circle" data-blobity-tooltip="Research Process"><GiOpenBook /></div>
+                      <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="View Website"><FaExternalLinkAlt /></a>
+                    </div>
                   </div>
                 </div>
               </section>
@@ -310,14 +310,14 @@ const App = () => {
                   <img src={Kue} alt="Portfolio on laptop" className="video-port" />
                 </div>
                 <div className="project-info" ref={projectInfoRefs[2]}>
-                  <div className="project-icons" ref={projectIconsRefs[2]}>
-                    <a href="https://git.fhict.nl/I476238/kue/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
-                    <a href="https://www.youtube.com/watch?v=IX5ZLV0LYSs" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Video Commercial"><TbMovie /></a>
-                  </div>
                   <div className="project-details">
                     <h2>Kue</h2>
                     <p>Kue is a web app which allows the user to request a song to the DJ with a click of a button.</p>
                     <p className="project-tags">REACT  SPOTIFY.API</p>
+                    <div className="project-icons" ref={projectIconsRefs[2]}>
+                      <a href="https://git.fhict.nl/I476238/kue/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
+                      <a href="https://www.youtube.com/watch?v=IX5ZLV0LYSs" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Video Commercial"><TbMovie /></a>
+                    </div>
                   </div>
                 </div>
               </section>
