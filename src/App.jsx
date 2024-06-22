@@ -194,6 +194,20 @@ const App = () => {
         );
       });
 
+      // ScrollTrigger for active nav link
+      const sections = ['home', 'projects1', 'projects2', 'projects3', 'video-showcase', 'about', 'contact'];
+      sections.forEach((id, index) => {
+        ScrollTrigger.create({
+          trigger: `#${id}`,
+          start: 'top center',
+          end: 'bottom center',
+          onEnter: () => setActiveNav(index),
+          onEnterBack: () => setActiveNav(index),
+          onLeave: () => setActiveNav(-1),
+          onLeaveBack: () => setActiveNav(-1),
+        });
+      });
+
       return () => {
         blobity.destroy();
         ScrollTrigger.kill();
@@ -201,8 +215,12 @@ const App = () => {
     }
   }, [loading]);
 
+  // State to keep track of the active nav link
+  const [activeNav, setActiveNav] = useState(0);
+
   //Lenis Button click scroll ease
-  const handleScrollTo = (id) => {
+  const handleScrollTo = (id, index) => {
+    setActiveNav(index);
     const target = document.getElementById(id);
     lenis.scrollTo(target, { duration: 2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
   };
@@ -239,13 +257,13 @@ const App = () => {
                 <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" data-blobity-tooltip="View CV">
                   <FaFilePdf />
                 </a>
-                <a onClick={() => handleScrollTo('home')}>Home</a>
-                <a onClick={() => handleScrollTo('projects')}>Projects</a>
-                <a onClick={() => handleScrollTo('video-showcase')}>Editing</a>
-                <a onClick={() => handleScrollTo('about')}>About</a>
-                <a onClick={() => handleScrollTo('contact')}>Contact</a>
+                <a onClick={() => handleScrollTo('home', 0)} className={activeNav === 0 ? 'active' : ''}>Home</a>
+                <a onClick={() => handleScrollTo('projects1', 1)} className={activeNav >= 1 && activeNav <= 3 ? 'active' : ''}>Projects</a>
+                <a onClick={() => handleScrollTo('video-showcase', 4)} className={activeNav === 4 ? 'active' : ''}>Editing</a>
+                <a onClick={() => handleScrollTo('about', 5)} className={activeNav === 5 ? 'active' : ''}>About</a>
+                <a onClick={() => handleScrollTo('contact', 6)} className={activeNav === 6 ? 'active' : ''}>Contact</a>
               </nav>
-              <section className="section2" ref={section2Refs[0]} id="projects">
+              <section className="section2" ref={section2Refs[0]} id="projects1">
                 <div className="laptop-background" ref={laptopImgRefs[0]}>
                   <img src={laptopBg} alt="Laptop background" className="laptop-bg" />
                   <img src={videoPort} alt="Portfolio on laptop" className="video-port" />
@@ -263,7 +281,7 @@ const App = () => {
                   </div>
                 </div>
               </section>
-              <section className="section2" ref={section2Refs[1]} id="projects">
+              <section className="section2" ref={section2Refs[1]} id="projects2">
                 <div className="laptop-background" ref={laptopImgRefs[1]}>
                   <img src={mapBg} alt="background" className="laptop-bg" />
                   <img src={Map} alt="Map on laptop" className="video-port" />
@@ -282,7 +300,7 @@ const App = () => {
                   </div>
                 </div>
               </section>
-              <section className="section2" ref={section2Refs[2]} id="projects">
+              <section className="section2" ref={section2Refs[2]} id="projects3">
                 <div className="laptop-background" ref={laptopImgRefs[2]}>
                   <img src={kueBg} alt="Laptop background" className="laptop-bg" />
                   <img src={Kue} alt="Portfolio on laptop" className="video-port" />
