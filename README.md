@@ -124,11 +124,91 @@ npm run dev
 
 ## Project File structure
 
-TBA
+```
+$PROJECT_ROOT
+│
+├── public
+│ ├── images
+│ ├── favicon
+│ ├── assets
+│ └── index.html
+│
+├── src
+│ ├── components
+│ │ ├── App.jsx
+│ │ ├── Preloader.jsx
+│ │ ├── Navbar.jsx
+│ │ ├── Section1.jsx
+│ │ ├── Section2.jsx
+│ │ ├── Section3.jsx
+│ │ ├── VideoShowcase.jsx
+│ │ ├── Contact.jsx
+│ │ └── blobityConfig.js
+│ │
+│ ├── images
+│ │ ├── VideoPort.png
+│ │ ├── LaptopBG.png
+│ │ ├── VideoPort2.png
+│ │ ├── LaptopBG2.png
+│ │ ├── VideoPort3.png
+│ │ ├── LaptopBG3.png
+│ │ ├── video1.png
+│ │ ├── video1.gif
+│ │ ├── video2.png
+│ │ ├── video2.gif
+│ │ ├── video3.png
+│ │ └── video3.gif
+│ │
+│ ├── styles
+│ │ ├── homepage.css
+│ │ ├── navbar.css
+│ │ ├── fonts.css
+│ │ └── Preloader.css
+│ │
+│ ├── main.jsx
+│ └── index.html
+│
+└── package.json
+```
 
 ## Website Structure
+```
+┌── Preloader (Language Onboarding)
+├── Navigation Menu
+│ ├── Home
+│ ├── Projects
+│ ├── About Me 
+│ └── Contact Me
+│
+├── Homepage
+│ ├── Hero Section
+│ │ ├── My Name and Professional Titles
+│ │ └── Social Links and Resume Button
+│ │
+│ ├── Section 1: Projects Overview
+│ │ ├── Project 1
+│ │ ├── Project 2
+│ │ └── Project 3
+│ │
+│ ├── Section 2: Video Showcase
+│ │ ├── Video 1
+│ │ ├── Video 2
+│ │ └── Video 3
+│ │
+│ ├── Section 3: About Me
+│ │ ├── Description 
+│ │ ├── Tools and Technologies
+│ │
+│ ├── Section 4: Contact Me
+│ │ ├── Contact Form
+│ │ ├── Email
+│ │ ├── GitHub Link
+│ │ └── LinkedIn Link
+│ │
+│ └── Footer
+│ └── Copyright Notice
 
-TBA
+```
 
 ## Bugs, Errors or Suggestions?
 
