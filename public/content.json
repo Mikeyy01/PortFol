@@ -1,0 +1,174 @@
+{
+  "header": {
+    "resumeLink": "https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view",
+    "socialLinks": [
+      {
+        "url": "https://github.com/Mikeyy01",
+        "icon": "FaGithub",
+        "label": "GitHub"
+      },
+      {
+        "url": "https://linkedin.com/in/michael-asl",
+        "icon": "FaLinkedin",
+        "label": "LinkedIn"
+      }
+    ],
+    "profile": {
+      "name": "MICHAEL ASLANIDIS",
+      "image": "/images/profile.png",
+      "titles": [
+        "Professional Video Editor &",
+        "Aspiring Front-End Developer"
+      ],
+      "descriptions": [
+        "Dedicated to crafting immersive video edits and engaging front-end experiences."
+      ]
+    }
+  },
+  "projects": [
+    {
+      "id": "projects1",
+      "title": "Social Media Portfolio",
+      "description": "Personal Portfolio showcasing videos I've edited.",
+      "tags": ["JAVASCRIPT", "BOOTSTRAP", "ANIMATE.CSS"],
+      "links": [
+        {
+          "url": "https://github.com/Mikeyy01/EditingShowcase",
+          "icon": "FaGithub",
+          "tooltip": "Project Repo"
+        },
+        {
+          "url": "https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/",
+          "icon": "FaExternalLinkAlt",
+          "tooltip": "View Website"
+        },
+        {
+          "url": "",
+          "icon": "GiOpenBook",
+          "tooltip": "Research Process"
+        }
+      ],
+      "images": {
+        "laptopBg": "./images/LaptopBG.png",
+        "videoPort": "./images/VideoPort.png"
+      }
+    },
+    {
+      "id": "projects2",
+      "title": "Community Interactive Map",
+      "description": "Map where citizens can report problems or leave suggestions regarding a certain area.",
+      "tags": ["LEAFLET", "REACT", "SURVEY.JS"],
+      "links": [
+        {
+          "url": "https://github.com/Mikeyy01/eind_intern",
+          "icon": "FaGithub",
+          "tooltip": "Project Repo"
+        },
+        {
+          "url": "https://youtu.be/_IaGCMJSFAI",
+          "icon": "TbMovie",
+          "tooltip": "Video Walkthrough"
+        },
+        {
+          "url": "",
+          "icon": "GiOpenBook",
+          "tooltip": "Research Process"
+        },
+        {
+          "url": "https://youtu.be/_IaGCMJSFAI",
+          "icon": "FaExternalLinkAlt",
+          "tooltip": "View Website"
+        }
+      ],
+      "images": {
+        "laptopBg": "./images/LaptopBG2.png",
+        "videoPort": "./images/VideoPort2.png"
+      }
+    },
+    {
+      "id": "projects3",
+      "title": "Kue",
+      "description": "Kue is a web app which allows the user to request a song to the DJ with a click of a button.",
+      "tags": ["REACT", "SPOTIFY.API"],
+      "links": [
+        {
+          "url": "https://git.fhict.nl/I476238/kue/",
+          "icon": "FaGithub",
+          "tooltip": "Project Repo"
+        },
+        {
+          "url": "https://www.youtube.com/watch?v=IX5ZLV0LYSs",
+          "icon": "TbMovie",
+          "tooltip": "Video Commercial"
+        }
+      ],
+      "images": {
+        "laptopBg": "./images/LaptopBG3.png",
+        "videoPort": "./images/VideoPort3.png"
+      }
+    }
+  ],
+  "videos": [
+    {
+      "title": "Waddle Ad",
+      "thumbnail": "./images/video1.png",
+      "gif": "./images/video1.gif",
+      "url": "https://youtu.be/HtW-QuUeaVY"
+    },
+    {
+      "title": "$50,000 Island",
+      "thumbnail": "./images/video2.png",
+      "gif": "./images/video2.gif",
+      "url": "https://www.youtube.com/watch?v=BvwRs632UT8"
+    },
+    {
+      "title": "All Star Football",
+      "thumbnail": "./images/video3.png",
+      "gif": "./images/video3.gif",
+      "url": "https://www.youtube.com/watch?v=pTXcpIg58rE"
+    }
+  ],
+  "about": {
+    "descriptions": [
+      "When I'm not immersed in the captivating world of video editing, you'll find me diving into the fascinating realm of front-end development, eagerly exploring new technologies and frameworks.",
+      "My passion for both video editing and front-end development drives me to constantly learn and grow in the tech industry.",
+      "Now, I am excited to embrace front-end development as the next step in my career, combining my enthusiasm for creativity and my love for cutting-edge technology to craft visually stunning and user-friendly web applications."
+    ],
+    "tools": [
+      {
+        "id": "frontend-tools",
+        "title": "Front-end Tools",
+        "list": "JavaScript(ES6), React, TypeScript, Git/GitHub."
+      },
+      {
+        "id": "ui-libraries",
+        "title": "UI Libraries",
+        "list": "SASS, Tailwind CSS, Framer Motion, Bootstrap."
+      },
+      {
+        "id": "design-tools",
+        "title": "Design Tools",
+        "list": "Figma, Adobe XD, Adobe Photoshop, Adobe After Effects, UX Research, UI Design, Prototyping."
+      }
+    ]
+  },
+  "contact": {
+    "title": "LET'S TALK",
+    "availabilityText": "I'm Available For Work",
+    "description": "GOT A QUESTION OR WANT TO WORK ON SOMETHING TOGETHER?",
+    "email": "m.aslanidis.03@gmail.com",
+    "socialLinks": [
+      {
+        "url": "https://github.com/Mikeyy01",
+        "icon": "FaGithub",
+        "label": "GitHub"
+      },
+      {
+        "url": "https://linkedin.com/in/michael-asl",
+        "icon": "FaLinkedin",
+        "label": "LinkedIn"
+      }
+    ],
+    "footer": "© 2024 Aslanidis, Inc. All Rights Reserved."
+  }
+}
