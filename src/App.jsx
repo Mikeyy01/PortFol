@@ -252,9 +252,9 @@ const App = () => {
                 </div>
                 <div className="project-info" ref={projectInfoRefs[0]}>
                   <div className="project-icons" ref={projectIconsRefs[0]}>
-                    <a href="https://github.com/Mikeyy01/EditingShowcase" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
-                    <a href="https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaExternalLinkAlt /></a>
-                    <a onClick={handleOpenBookClick} className="icon-circle" data-blobity><GiOpenBook /></a>
+                    <a href="https://github.com/Mikeyy01/EditingShowcase" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
+                    <a href="https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="View Website"><FaExternalLinkAlt /></a>
+                    <a onClick={handleOpenBookClick} className="icon-circle" data-blobity-tooltip="Research Process"><GiOpenBook /></a>
                   </div>
                   <div className="project-details">
                     <h2>Social Media Portfolio</h2>
@@ -270,10 +270,10 @@ const App = () => {
                 </div>
                 <div className="project-info" ref={projectInfoRefs[1]}>
                   <div className="project-icons" ref={projectIconsRefs[1]}>
-                    <a href="https://github.com/Mikeyy01/eind_intern" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
-                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><TbMovie /></a>
-                    <div className="icon-circle" data-blobity><GiOpenBook /></div>
-                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaExternalLinkAlt /></a>
+                    <a href="https://github.com/Mikeyy01/eind_intern" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
+                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Video Walkthrough"><TbMovie /></a>
+                    <div className="icon-circle" data-blobity-tooltip="Research Process"><GiOpenBook /></div>
+                    <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="View Website"><FaExternalLinkAlt /></a>
                   </div>
                   <div className="project-details">
                     <h2>Community Interactive Map</h2>
@@ -289,8 +289,8 @@ const App = () => {
                 </div>
                 <div className="project-info" ref={projectInfoRefs[2]}>
                   <div className="project-icons" ref={projectIconsRefs[2]}>
-                    <a href="https://git.fhict.nl/I476238/kue/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><FaGithub /></a>
-                    <a href="https://www.youtube.com/watch?v=IX5ZLV0LYSs" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity><TbMovie /></a>
+                    <a href="https://git.fhict.nl/I476238/kue/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
+                    <a href="https://www.youtube.com/watch?v=IX5ZLV0LYSs" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Video Commercial"><TbMovie /></a>
                   </div>
                   <div className="project-details">
                     <h2>Kue</h2>
