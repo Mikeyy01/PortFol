@@ -188,7 +188,7 @@ h1 {
 .section3 {
     background-color: #09090D;
     color: #E4DED7;
-    padding: 50px 18%;
+    padding: 50px 12%;
     text-align: left;
     display: flex;
     flex-direction: column;
@@ -199,7 +199,7 @@ h1 {
 
 #section-title {
     font-family: 'Syne', sans-serif;
-    font-size: 3.7em;
+    font-size: 4.5em;
     font-weight: bold;
     line-height: 1;
 }
@@ -216,13 +216,13 @@ h1 {
 
 #description1, #description2, #description3 {
     font-family: 'Syne', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.5em;
     font-weight: normal;
     margin: 20px 0;
 }
 
 #tools {
-    max-width: 20%;
+    max-width: 25%;
 }
 
 .tool-section {
@@ -231,7 +231,7 @@ h1 {
 
 #frontend-tools .tools-title, #ui-libraries .tools-title, #design-tools .tools-title {
     font-family: 'Syne', sans-serif;
-    font-size: 1.1em;
+    font-size: 1.5em;
     font-weight: bold;
 }
 
