@@ -3,12 +3,8 @@ import gsap from 'gsap';
 import './Preloader.css';
 import "@fontsource/inter";
 
-
-
 const Preloader = ({ onEnd }) => {
-    // Array of the different hellos that will be displayed
     const [hellos, setMessages] = useState(["Hello!", "أهلا", "Γειά σου!", "Здравейте!", "Hallo!", "Hallo!!"]);
-    // References to directly access the preloader and hello elements
     const helloRef = useRef(null);
     const preloaderRef = useRef(null);
 
@@ -21,12 +17,14 @@ const Preloader = ({ onEnd }) => {
                     opacity: 0,
                     duration: 0.2,
                     onComplete: () => {
-                        helloRef.current.innerHTML = hellos[helloIndex];
-                        gsap.to(helloRef.current, { opacity: 1, duration: 0.2 });
-                        helloIndex++;
-                        setTimeout(cycleHellos, 550); // changes hello every 550ms
-                        if (hellos[helloIndex] === "Hallo!!") {
-                            onEnd();
+                        if (helloRef.current) {
+                            helloRef.current.innerHTML = hellos[helloIndex];
+                            gsap.to(helloRef.current, { opacity: 1, duration: 0.2 });
+                            helloIndex++;
+                            setTimeout(cycleHellos, 550); // changes hello every 550ms
+                            if (hellos[helloIndex] === "Hallo!!") {
+                                onEnd();
+                            }
                         }
                     }
                 });
