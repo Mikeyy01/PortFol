@@ -8,7 +8,7 @@ import './homepage.css';
 import './navbar.css';
 import './fonts.css';
 import initializeBlobity from './blobityConfig';
-import { FaFilePdf, FaGithub, FaExternalLinkAlt } from "react-icons/fa";
+import { FaFilePdf, FaGithub, FaExternalLinkAlt, FaLinkedin } from "react-icons/fa";
 import { TbMovie } from "react-icons/tb";
 import { GiOpenBook } from "react-icons/gi";
 import { IoIosArrowForward } from "react-icons/io";
@@ -239,8 +239,12 @@ const App = () => {
                   <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" className="resume-button" data-blobity>VIEW RESUME</a>
                 </div>
                 <div className="top-right">
-                  <a href="https://github.com/Mikeyy01" className="social-link" data-blobity>GitHub</a>
-                  <a href="https://linkedin.com/in/michael-asl" className="social-link" data-blobity>LinkedIn</a>
+                  <a href="https://github.com/Mikeyy01" className="social-link" data-blobity>
+                    <FaGithub style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />GitHub
+                  </a>
+                  <a href="https://linkedin.com/in/michael-asl" className="social-link" data-blobity>
+                    <FaLinkedin style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />LinkedIn
+                  </a>
                 </div>
                 <div className="content">
                   <h1 ref={headingRef}>MICHAEL<br />ASLANIDIS</h1>
@@ -390,8 +394,12 @@ const App = () => {
                     <a href="mailto:m.aslanidis.03@gmail.com" className="contact-email" ref={contactTextRefs[1]}>SEND ME AN EMAIL</a>
                   </div>
                   <div className="contact-right">
-                    <a href="https://github.com/Mikeyy01" className="contact-social" ref={contactSocialRefs[0]}>GitHub</a>
-                    <a href="https://linkedin.com/in/michael-asl" className="contact-social" ref={contactSocialRefs[1]}>LinkedIn</a>
+                    <a href="https://github.com/Mikeyy01" className="contact-social" ref={contactSocialRefs[0]}>
+                      <FaGithub style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />GitHub
+                    </a>
+                    <a href="https://linkedin.com/in/michael-asl" className="contact-social" ref={contactSocialRefs[1]}>
+                      <FaLinkedin style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />LinkedIn
+                    </a>
                   </div>
                 </div>
                 <div className="footer">
