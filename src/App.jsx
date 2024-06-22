@@ -388,6 +388,7 @@ const App = () => {
               </div>
               <div className="contact-section" ref={contactSectionRef} id="contact">
                 <h2 className="contact-title" ref={contactTitleRef}>LET'S TALK</h2>
+                <p className="availability-text">I'm Available For Work</p>
                 <div className="contact-content">
                   <div className="contact-left">
                     <p className="contact-text" ref={contactTextRefs[0]}>GOT A QUESTION OR WANT TO WORK <br /> ON SOMETHING TOGETHER?</p>

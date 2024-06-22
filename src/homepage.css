@@ -1,3 +1,5 @@
+@import url('https://fonts.googleapis.com/css2?family=Nothing+You+Could+Do&display=swap');
+
 body {
     margin: 0;
     padding: 0;
@@ -254,6 +256,15 @@ h1 {
     font-size: 25em;
     margin: 0;
 }
+
+.availability-text {
+    font-family: 'Nothing You Could Do', cursive;
+    font-size: 2em;
+    margin-top: -50px; /* Adjust based on your layout */
+    margin-left: 5px; /* Adjust based on your layout */
+    color: #E4DED7;
+}
+
 
 .contact-content {
     display: flex;
