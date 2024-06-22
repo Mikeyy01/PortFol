@@ -216,7 +216,7 @@ h1 {
     max-width: 55%;
 }
 
-#description1, #description2, #description3 {
+.section-description {
     font-family: 'Syne', sans-serif;
     font-size: 1.5em;
     font-weight: normal;
@@ -231,17 +231,18 @@ h1 {
     margin-top: 15px;
 }
 
-#frontend-tools .tools-title, #ui-libraries .tools-title, #design-tools .tools-title {
+.tools-title {
     font-family: 'Syne', sans-serif;
     font-size: 1.5em;
     font-weight: bold;
 }
 
-#frontend-tools .tools-list, #ui-libraries .tools-list, #design-tools .tools-list {
+.tools-list {
     font-family: 'Syne', sans-serif;
     font-size: 1em;
     font-weight: normal;
 }
+
 
 .contact-section {
     padding: 100px 10%;

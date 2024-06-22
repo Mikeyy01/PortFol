@@ -4,14 +4,20 @@ import { ScrollTrigger } from 'gsap/ScrollTrigger';
 import SplitType from 'split-type';
 import Lenis from 'lenis';
 import Preloader from './Preloader';
+import Navbar from './Navbar';
+import Section1 from './Section1';
+import Section2 from './Section2';
+import Section3 from './Section3';
+import VideoShowcase from './VideoShowcase';
+import Contact from './Contact';
 import './homepage.css';
 import './navbar.css';
 import './fonts.css';
 import initializeBlobity from './blobityConfig';
-import { FaFilePdf, FaGithub, FaExternalLinkAlt, FaLinkedin } from "react-icons/fa";
+import { FaGithub, FaExternalLinkAlt } from "react-icons/fa";
 import { TbMovie } from "react-icons/tb";
 import { GiOpenBook } from "react-icons/gi";
-import { IoIosArrowForward } from "react-icons/io";
+
 import videoPort from './images/VideoPort.png';
 import laptopBg from './images/LaptopBG.png';
 import Map from './images/VideoPort2.png';
@@ -41,7 +47,6 @@ gsap.ticker.lagSmoothing(0);
 
 const App = () => {
   const [loading, setLoading] = useState(true);
-  const contentRef = useRef(null);
   const sectionRef = useRef(null);
   const section2Refs = [useRef(null), useRef(null), useRef(null)];
   const headingRef = useRef(null);
@@ -53,7 +58,6 @@ const App = () => {
   const splitTextRef = useRef(null);
   const descriptionRefs = [useRef(null), useRef(null), useRef(null)];
   const toolsRef = useRef(null);
-  const contactSectionRef = useRef(null);
   const contactTitleRef = useRef(null);
   const contactTextRefs = [useRef(null), useRef(null)];
   const contactSocialRefs = [useRef(null), useRef(null)];
@@ -229,185 +233,121 @@ const App = () => {
     lenis.scrollTo('research', { duration: 2, easing: (t) => Math.min(1, 1.001 - Math.pow(2, -10 * t)) });
   };
 
+  const projects = [
+    {
+      sectionRef: section2Refs[0],
+      laptopImgRef: laptopImgRefs[0],
+      projectInfoRef: projectInfoRefs[0],
+      projectIconsRef: projectIconsRefs[0],
+      bgImage: laptopBg,
+      projectImage: videoPort,
+      title: "Social Media Portfolio",
+      description: "Personal Portfolio showcasing videos I've edited.",
+      tags: "JAVASCRIPT  BOOTSTRAP  ANIMATE.CSS",
+      links: [
+        { url: "https://github.com/Mikeyy01/EditingShowcase", tooltip: "Project Repo", icon: <FaGithub /> },
+        { url: "https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/", tooltip: "View Website", icon: <FaExternalLinkAlt /> },
+        { url: "#", tooltip: "Research Process", icon: <GiOpenBook />, onClick: handleOpenBookClick }
+      ]
+    },
+    {
+      sectionRef: section2Refs[1],
+      laptopImgRef: laptopImgRefs[1],
+      projectInfoRef: projectInfoRefs[1],
+      projectIconsRef: projectIconsRefs[1],
+      bgImage: mapBg,
+      projectImage: Map,
+      title: "Community Interactive Map",
+      description: "Map where citizens can report problems or leave suggestions regarding a certain area.",
+      tags: "LEAFLET  REACT  SURVEY.JS",
+      links: [
+        { url: "https://github.com/Mikeyy01/eind_intern", tooltip: "Project Repo", icon: <FaGithub /> },
+        { url: "https://youtu.be/_IaGCMJSFAI", tooltip: "Video Walkthrough", icon: <TbMovie /> },
+        { url: "#", tooltip: "Research Process", icon: <GiOpenBook />, onClick: handleOpenBookClick },
+        { url: "https://youtu.be/_IaGCMJSFAI", tooltip: "View Website", icon: <FaExternalLinkAlt /> }
+      ]
+    },
+    {
+      sectionRef: section2Refs[2],
+      laptopImgRef: laptopImgRefs[2],
+      projectInfoRef: projectInfoRefs[2],
+      projectIconsRef: projectIconsRefs[2],
+      bgImage: kueBg,
+      projectImage: Kue,
+      title: "Kue",
+      description: "Kue is a web app which allows the user to request a song to the DJ with a click of a button.",
+      tags: "REACT  SPOTIFY.API",
+      links: [
+        { url: "https://git.fhict.nl/I476238/kue/", tooltip: "Project Repo", icon: <FaGithub /> },
+        { url: "https://www.youtube.com/watch?v=IX5ZLV0LYSs", tooltip: "Video Commercial", icon: <TbMovie /> }
+      ]
+    }
+  ];
+
+  const videos = [
+    {
+      link: "https://youtu.be/HtW-QuUeaVY",
+      thumbnail: video1,
+      gif: video1Gif,
+      title: "Waddle Ad",
+      gifRef: video1GifRef
+    },
+    {
+      link: "https://www.youtube.com/watch?v=BvwRs632UT8",
+      thumbnail: video2,
+      gif: video2Gif,
+      title: "$50,000 Island",
+      gifRef: video2GifRef
+    },
+    {
+      link: "https://www.youtube.com/watch?v=pTXcpIg58rE",
+      thumbnail: video3,
+      gif: video3Gif,
+      title: "All Star Football",
+      gifRef: video3GifRef
+    }
+  ];
+
   return (
       <div className="port" style={{ height: '100vh' }}>
         {loading && <Preloader onEnd={handlePreloaderEnd} />}
         {!loading && (
-            <div ref={contentRef}>
-              <section className="section1" ref={sectionRef} id="home">
-                <div className="top-left">
-                  <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" className="resume-button" data-blobity>VIEW RESUME</a>
-                </div>
-                <div className="top-right">
-                  <a href="https://github.com/Mikeyy01" className="social-link" data-blobity>
-                    <FaGithub style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />GitHub
-                  </a>
-                  <a href="https://linkedin.com/in/michael-asl" className="social-link" data-blobity>
-                    <FaLinkedin style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />LinkedIn
-                  </a>
-                </div>
-                <div className="content">
-                  <h1 ref={headingRef}>MICHAEL<br />ASLANIDIS</h1>
-                  <img ref={avatarRef} src="/images/profile.png" alt="profile avatar" className="avatar" />
-                </div>
-                <div className="bottom-left" ref={bottomLeftRef}>
-                  <p>Professional Video Editor &<br />Aspiring Front-End Developer</p>
-                </div>
-                <div className="bottom-right" ref={bottomRightRef}>
-                  <p>Dedicated to crafting immersive video <br />edits and engaging front-end <br />experiences.</p>
-                </div>
-              </section>
-              <nav className="fixed-navbar" ref={navbarRef}>
-                <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" data-blobity-tooltip="View CV">
-                  <FaFilePdf />
-                </a>
-                <a onClick={() => handleScrollTo('home', 0)} className={activeNav === 0 ? 'active' : ''}>Home</a>
-                <a onClick={() => handleScrollTo('projects1', 1)} className={activeNav >= 1 && activeNav <= 3 ? 'active' : ''}>Projects</a>
-                <a onClick={() => handleScrollTo('video-showcase', 4)} className={activeNav === 4 ? 'active' : ''}>Editing</a>
-                <a onClick={() => handleScrollTo('about', 5)} className={activeNav === 5 ? 'active' : ''}>About</a>
-                <a onClick={() => handleScrollTo('contact', 6)} className={activeNav === 6 ? 'active' : ''}>Contact</a>
-              </nav>
-              <section className="section2" ref={section2Refs[0]} id="projects1">
-                <div className="laptop-background" ref={laptopImgRefs[0]}>
-                  <img src={laptopBg} alt="Laptop background" className="laptop-bg" />
-                  <img src={videoPort} alt="Portfolio on laptop" className="video-port" />
-                </div>
-                <div className="project-info" ref={projectInfoRefs[0]}>
-                  <div className="project-details">
-                    <h2>Social Media Portfolio</h2>
-                    <p>Personal Portfolio showcasing videos I've edited.</p>
-                    <p className="project-tags">JAVASCRIPT  BOOTSTRAP  ANIMATE.CSS</p>
-                    <div className="project-icons" ref={projectIconsRefs[0]}>
-                      <a href="https://github.com/Mikeyy01/EditingShowcase" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
-                      <a href="https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="View Website"><FaExternalLinkAlt /></a>
-                      <a onClick={handleOpenBookClick} className="icon-circle" data-blobity-tooltip="Research Process"><GiOpenBook /></a>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section className="section2" ref={section2Refs[1]} id="projects2">
-                <div className="laptop-background" ref={laptopImgRefs[1]}>
-                  <img src={mapBg} alt="background" className="laptop-bg" />
-                  <img src={Map} alt="Map on laptop" className="video-port" />
-                </div>
-                <div className="project-info" ref={projectInfoRefs[1]}>
-                  <div className="project-details">
-                    <h2>Community Interactive Map</h2>
-                    <p>Map where citizens can report problems or leave suggestions regarding a certain area.</p>
-                    <p className="project-tags">LEAFLET  REACT  SURVEY.JS</p>
-                    <div className="project-icons" ref={projectIconsRefs[1]}>
-                      <a href="https://github.com/Mikeyy01/eind_intern" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
-                      <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Video Walkthrough"><TbMovie /></a>
-                      <div className="icon-circle" data-blobity-tooltip="Research Process"><GiOpenBook /></div>
-                      <a href="https://youtu.be/_IaGCMJSFAI" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="View Website"><FaExternalLinkAlt /></a>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <section className="section2" ref={section2Refs[2]} id="projects3">
-                <div className="laptop-background" ref={laptopImgRefs[2]}>
-                  <img src={kueBg} alt="Laptop background" className="laptop-bg" />
-                  <img src={Kue} alt="Portfolio on laptop" className="video-port" />
-                </div>
-                <div className="project-info" ref={projectInfoRefs[2]}>
-                  <div className="project-details">
-                    <h2>Kue</h2>
-                    <p>Kue is a web app which allows the user to request a song to the DJ with a click of a button.</p>
-                    <p className="project-tags">REACT  SPOTIFY.API</p>
-                    <div className="project-icons" ref={projectIconsRefs[2]}>
-                      <a href="https://git.fhict.nl/I476238/kue/" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Project Repo"><FaGithub /></a>
-                      <a href="https://www.youtube.com/watch?v=IX5ZLV0LYSs" target="_blank" rel="noopener noreferrer" className="icon-circle" data-blobity-tooltip="Video Commercial"><TbMovie /></a>
-                    </div>
-                  </div>
-                </div>
-              </section>
-              <div className="video-showcase" id="video-showcase">
-                <h2 ref={videoSectionRef}>Videos I've Edited</h2>
-                <div className="video-grid" ref={videoSectionRef}>
-                  <a href="https://youtu.be/HtW-QuUeaVY" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity ref={videoRefs[0]} onMouseEnter={() => handleMouseEnter(video1GifRef)}>
-                    <img src={video1} alt="Video 1" className="video-thumbnail" />
-                    <img src={video1Gif} alt="Video 1 Gif" className="video-gif" ref={video1GifRef} />
-                    <div className="video-info">
-                      <p className="video-title" data-blobity>Waddle Ad <IoIosArrowForward /></p>
-                    </div>
-                  </a>
-                  <a href="https://www.youtube.com/watch?v=BvwRs632UT8" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity ref={videoRefs[1]} onMouseEnter={() => handleMouseEnter(video2GifRef)}>
-                    <img src={video2} alt="Video 2" className="video-thumbnail" />
-                    <img src={video2Gif} alt="Video 2 Gif" className="video-gif" ref={video2GifRef} />
-                    <div className="video-info">
-                      <p className="video-title" data-blobity>$50,000 Island <IoIosArrowForward /></p>
-                    </div>
-                  </a>
-                  <a href="https://www.youtube.com/watch?v=pTXcpIg58rE" target="_blank" rel="noopener noreferrer" className="video-item" data-no-blobity ref={videoRefs[2]} onMouseEnter={() => handleMouseEnter(video3GifRef)}>
-                    <img src={video3} alt="Video 3" className="video-thumbnail" />
-                    <img src={video3Gif} alt="Video 3 Gif" className="video-gif" ref={video3GifRef} />
-                    <div className="video-info">
-                      <p className="video-title" data-blobity>All Star Football <IoIosArrowForward /></p>
-                    </div>
-                  </a>
-                </div>
-              </div>
-              <div className="section3" ref={section3Ref} id="about">
-                <h2 id="section-title" ref={splitTextRef}>
-                  CREATING STUNNING<br />
-                  VIDEOS AND UNLEASHING<br />
-                  FRONT-END MAGIC.
-                </h2>
-                <div className="content-wrapper">
-                  <div id="section-content">
-                    <p className="section-description" id="description1" ref={descriptionRefs[0]}>
-                      When I'm not immersed in the captivating world of video editing, you'll find me diving into the
-                      fascinating realm of front-end development, eagerly exploring new technologies and frameworks.
-                    </p>
-                    <p className="section-description" id="description2" ref={descriptionRefs[1]}>
-                      My passion for both video editing and front-end development drives me to constantly learn and grow
-                      in the tech industry.
-                    </p>
-                    <p className="section-description" id="description3" ref={descriptionRefs[2]}>
-                      Now, I am excited to embrace front-end development as the next step in my career, combining my
-                      enthusiasm for creativity and my love for cutting-edge technology to craft visually stunning and
-                      user-friendly web applications.
-                    </p>
-                  </div>
-                  <div id="tools" ref={toolsRef}>
-                    <div className="tool-section" id="frontend-tools">
-                      <h3 className="tools-title">Front-end Tools</h3>
-                      <p className="tools-list">JavaScript(ES6), React, TypeScript, Git/GitHub.</p>
-                    </div>
-                    <div className="tool-section" id="ui-libraries">
-                      <h3 className="tools-title">UI Libraries</h3>
-                      <p className="tools-list">SASS, Tailwind CSS, Framer Motion, Bootstrap.</p>
-                    </div>
-                    <div className="tool-section" id="design-tools">
-                      <h3 className="tools-title">Design Tools</h3>
-                      <p className="tools-list">Figma, Adobe XD, Adobe Photoshop, Adobe After Effects, UX Research, UI
-                        Design, Prototyping.</p>
-                    </div>
-                  </div>
-                </div>
-              </div>
-              <div className="contact-section" ref={contactSectionRef} id="contact">
-                <h2 className="contact-title" ref={contactTitleRef}>LET'S TALK</h2>
-                <p className="availability-text">I'm Available For Work</p>
-                <div className="contact-content">
-                  <div className="contact-left">
-                    <p className="contact-text" ref={contactTextRefs[0]}>GOT A QUESTION OR WANT TO WORK <br /> ON SOMETHING TOGETHER?</p>
-                    <a href="mailto:m.aslanidis.03@gmail.com" className="contact-email" ref={contactTextRefs[1]}>SEND ME AN EMAIL</a>
-                  </div>
-                  <div className="contact-right">
-                    <a href="https://github.com/Mikeyy01" className="contact-social" ref={contactSocialRefs[0]}>
-                      <FaGithub style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />GitHub
-                    </a>
-                    <a href="https://linkedin.com/in/michael-asl" className="contact-social" ref={contactSocialRefs[1]}>
-                      <FaLinkedin style={{ color: '#E4DED7', fontSize: '1em', marginRight: '8px' }} />LinkedIn
-                    </a>
-                  </div>
-                </div>
-                <div className="footer">
-                  <hr />
-                  <p className="footer-text">© 2024 Aslanidis, Inc. All Rights Reserved.</p>
-                </div>
-              </div>
+            <div>
+              <Navbar activeNav={activeNav} handleScrollTo={handleScrollTo} />
+              <Section1
+                  sectionRef={sectionRef}
+                  headingRef={headingRef}
+                  avatarRef={avatarRef}
+                  bottomLeftRef={bottomLeftRef}
+                  bottomRightRef={bottomRightRef}
+              />
+              {projects.map((project, index) => (
+                  <Section2
+                      key={index}
+                      sectionRef={project.sectionRef}
+                      laptopImgRef={project.laptopImgRef}
+                      projectInfoRef={project.projectInfoRef}
+                      projectIconsRef={project.projectIconsRef}
+                      bgImage={project.bgImage}
+                      projectImage={project.projectImage}
+                      title={project.title}
+                      description={project.description}
+                      tags={project.tags}
+                      links={project.links}
+                  />
+              ))}
+              <VideoShowcase
+                  videoRefs={videoRefs}
+                  videoSectionRef={videoSectionRef}
+                  handleMouseEnter={handleMouseEnter}
+                  videos={videos}
+              />
+              <Section3 descriptionRefs={descriptionRefs} toolsRef={toolsRef} />
+              <Contact
+                  contactTitleRef={contactTitleRef}
+                  contactTextRefs={contactTextRefs}
+                  contactSocialRefs={contactSocialRefs}
+              />
             </div>
         )}
       </div>
