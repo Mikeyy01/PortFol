@@ -5,7 +5,7 @@ const Section1 = ({ sectionRef, headingRef, avatarRef, bottomLeftRef, bottomRigh
     return (
         <section className="section1" ref={sectionRef} id="home">
             <div className="top-left">
-                <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" className="resume-button" data-blobity>VIEW RESUME</a>
+                <a href="https://drive.google.com/file/d/11uhziv0tidDnZFqkZuNkT3Njrizt8R3j/view" target="_blank" className="resume-button" data-blobity>VIEW RESUME</a>
             </div>
             <div className="top-right">
                 <a href="https://github.com/Mikeyy01" className="social-link" data-blobity>
