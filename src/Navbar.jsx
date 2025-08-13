@@ -4,7 +4,7 @@ import { FaFilePdf, FaGithub, FaLinkedin } from "react-icons/fa";
 const Navbar = ({ activeNav, handleScrollTo }) => {
     return (
         <nav className="fixed-navbar">
-            <a href="https://drive.google.com/file/d/1D4qgzvED932p6RTfhCFVCB8QXCAU0lDL/view" target="_blank" data-blobity-tooltip="View CV">
+            <a href="https://drive.google.com/file/d/11uhziv0tidDnZFqkZuNkT3Njrizt8R3j/view" target="_blank" data-blobity-tooltip="View CV">
                 <FaFilePdf />
             </a>
             <a onClick={() => handleScrollTo('home', 0)} className={activeNav === 0 ? 'active' : ''}>Home</a>
