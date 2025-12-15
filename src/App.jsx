@@ -247,7 +247,7 @@ const App = () => {
       links: [
         { url: "https://github.com/Mikeyy01/EditingShowcase", tooltip: "Project Repo", icon: <FaGithub /> },
         { url: "https://editing-showcase-qq4j7icl0-mikeyy01s-projects.vercel.app/", tooltip: "View Website", icon: <FaExternalLinkAlt /> },
-        { url: "#", tooltip: "Research Process", icon: <GiOpenBook />, onClick: handleOpenBookClick }
+        { url: "https://drive.google.com/file/d/1CrGE6eIBiwx9StGPnN8QrffIccS9zD6q/view", tooltip: "Research Process", icon: <GiOpenBook />, onClick: handleOpenBookClick }
       ]
     },
     {
