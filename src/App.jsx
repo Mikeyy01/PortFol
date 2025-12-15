@@ -263,7 +263,7 @@ const App = () => {
       links: [
         { url: "https://github.com/Mikeyy01/eind_intern", tooltip: "Project Repo", icon: <FaGithub /> },
         { url: "https://youtu.be/_IaGCMJSFAI", tooltip: "Video Walkthrough", icon: <TbMovie /> },
-        { url: "#", tooltip: "Research Process", icon: <GiOpenBook />, onClick: handleOpenBookClick },
+        { url: "https://drive.google.com/file/d/1CrGE6eIBiwx9StGPnN8QrffIccS9zD6q/view", tooltip: "Research Process", icon: <GiOpenBook />, onClick: handleOpenBookClick },
         { url: "https://youtu.be/_IaGCMJSFAI", tooltip: "View Website", icon: <FaExternalLinkAlt /> }
       ]
     },
